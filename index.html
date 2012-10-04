@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="left">
+			<div id="help">
+				<h3> do you need help?</h3>
+				<ul>
+					<li>dustjs tutorial</li>
+					<li>dustjs code</li>
+					<li>helpers</li>
+					<li>dustjs wiki</li>
+				</ul>
+			</div>
+			<div id="selection-box">
+				<div class="header">Select a template:</div>
+				<select id="template-list">
+					<option> template 1 </option>
+					<option> template 2 </option>
+					<option> template 3 </option>
+					<option> template 4 </option>
+					<option> template 5 </option>
+				</select>
+				<div class="header">Select a Context:</div>
+				<select id="context-list">
+					<option> template 1 </option>
+					<option> template 2 </option>
+					<option> template 3 </option>
+					<option> template 4 </option>
+					<option> template 5 </option>
+				</select>
+			</div>
+		</div>
+		<div id="content">
+			<div id="template-editor" class="box-editor">Hi! {name}, how are u?. You have {count} in your inbox</div>
+			<div id="context-editor" class="box-editor">{ name: "John", count: 3 }</div>
+			<div id="html" class="box-editor">Hi! John, how are u?. You have 3 in your inbox</div>
+			<div id="render" class="box-editor">Hi! John, how are u?. You have 3 in your inbox</div>
+		</div>
+	</body>
+</html>

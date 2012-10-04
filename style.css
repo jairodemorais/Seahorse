@@ -1,0 +1,115 @@
+body {
+  height: 100%;
+  padding: 0;
+	font-family: "Helvetica", "Lucida Sans", "Lucida Sans Unicode", "Luxi Sans", Tahoma, sans-serif;
+	background: #E9E9E9 url('https://s3-s.licdn.com/scds/common/u/img/bg/bg_grain_200x200.png');
+	font-size: 13px;
+}
+
+h3 {
+  margin: 5px;
+  color: #71C5EF;
+}
+
+ul {
+	margin-left: 7px;
+	list-style: none;
+	padding: 0px;
+	color: #0073B2;
+}
+
+#header {
+	height: 44px;
+	background: #3D668F url(../img/top-bg.png) repeat-x;
+}
+
+#left {
+	padding: 0;
+	margin: 0;
+	font-size: 11px;
+	width: 217px;
+	position: absolute;
+	left: 0;
+	color: #444;
+}
+
+#left #help {
+	background: white;
+	width: 140px;
+	border: 5px solid #303030;
+	border: 5px solid rgba(0, 0, 0, 0.65);
+  margin-left: 30px;
+  padding: 5px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -o-border-bottom-left-radius: 4px;
+  -ms-border-bottom-left-radius: 4px;
+  -khtml-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -o-border-bottom-right-radius: 4px;
+  -ms-border-bottom-right-radius: 4px;
+  -khtml-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-box-shadow: 0 0 10px #303030;
+  -webkit-box-shadow: 0 0 10px #303030;
+  -o-box-shadow: 0 0 10px #303030;
+  box-shadow: 0 0 10px #303030;
+}
+
+#left #selection-box {
+	margin-left: 10px;
+	width: 100%;
+}
+
+#left #selection-box select {
+	width: 200px;
+}
+
+#left #selection-box div.header {
+  border-top: 1px solid #EEE;
+  margin: 25px 9px 0px 0px;
+  color: #666;
+  padding: 5px 0px;
+}
+
+#content {
+	margin: 14px 15px 0 217px;
+  position: relative;
+  border-left: 5px solid #303030;
+  border-left: 5px solid rgba(0, 0, 0, 0.65);
+  height: 568px;
+  min-height: 100%;
+}
+
+.box-editor {
+	position: absolute;
+	right: 0;
+  width: 49%;
+  height: 49%;
+  background-color: white;
+}
+
+#content #template-editor { 
+  top: 0;
+  left: 0;
+}
+
+#content #context-editor { 
+  top: 50%;
+  left: 0;
+  bottom: 0;
+}
+
+#content #html {
+  top:0px;
+  left:50%;
+  float: left;
+}
+
+#content #render {
+	top:50%;
+	left:50%;
+	bottom: 0;
+}
