@@ -35,7 +35,12 @@
 
   <div class="hero-unit container-fluid">
     <div class="row-fluid">
-      <div class="span6"><h4>dust template</h4></div>
+      <div class="span6">
+        <h4>dust template</h4>
+        <div class="well">  
+          Template name <input id="search" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />  
+        </div>
+      </div>
       <div class="span6"><h4>json data</h4></div>
     </div>
     <div class="row-fluid">
@@ -45,6 +50,37 @@
 
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+    files =[];
+    //get templates or json files
+    var getFiles = function(url, extension, callback) {
+      $.ajax({
+        url: url,
+        type: 'GET',
+        crossDomain: true,
+        dataType: 'json',
+        success: function(data) {
+          files[extension] = data || [];
+          callback(data);
+        }
+      });
+    };
+
+    var fillDropDown = function(apps) {
+      var templates = [];
+      for (var app in apps) {
+        for (var temp in apps[app]) {
+          templates.push(apps[app][temp]);
+        };
+      };
+      $('#search').typeahead({source: templates, items:5});
+    }
+
+    jQuery(document).ready(function() {
+      var url = "http://localhost:9000/proxy?url=http%3A%2F%2Feat1-app53.corp.linkedin.com%3A8080%2Fscds%2Fdust%2FdevBuild%2Findex%3Ff%3Dtl%2Fapps%26e%3Dtl&method=GET";
+      getFiles(url, 'tl', fillDropDown);
+    });  
+  </script>
 
 </body>
 </html>
