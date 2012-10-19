@@ -32,5 +32,19 @@ $(document).ready(function(){
     $.get('/proxy?url=' + encodeURIComponent($('#json-url').val()) + '&method=GET', function(json){
       jsonEditor.setValue(json);
     });
-  })
+  });
+
+  $('#json-compile').click(function() {
+    var tlInput = templateEditor.getValue().replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, '');
+    if (!tlInput) {
+      event.preventDefault();
+      $("#ajax_error").html("<h2>ERROR: Please select a template</h2>");
+    } else {
+      var url = "http://eat1-app53.corp.linkedin.com:8080/scds/dust/compile";
+      var qs = "?name=SeaHorse&context=" + jsonEditor.getValue() + "&template=" + tlInput;
+      $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=GET"), function(out) {
+        $('#source_output').val(out)
+      });
+    }
+  });
 });
