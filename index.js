@@ -25,9 +25,17 @@ app.get('/proxy', function(req, res) {
 function proxyRequest(req, res) {
   var proxyTo = url.parse(req.query['url'], true);
   proxyTo.method = req.query['method'];
-  http.request(proxyTo, function(_res) {
+  if (proxyTo.method == 'POST') {
+    var qs = Object.keys(proxyTo.query).map(function(k){return k + "=" + proxyTo.query[k];}).join("&")
+    delete(proxyTo.query);
+  }
+
+  var request = http.request(proxyTo, function(_res) {
     _res.pipe(res);
-  }).end();
+  });
+
+  if (proxyTo.method == 'POST') request.write(qs);
+  request.end();
 }
 
 app.listen(port);
