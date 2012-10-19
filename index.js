@@ -6,5 +6,5 @@ app.get('/', function(req, res){
   res.send('hello world');
 });
 
-app.listen();
+app.listen(port);
 console.log('express listening in port', port, '...')
