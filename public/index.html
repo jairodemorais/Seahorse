@@ -24,9 +24,9 @@
         <a class="brand" href="#">Seahorse</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><a href="#" class="Button">Run</a></li>
-            <li><a href="#" class="Button">Save</a></li>
-            <li><a href="#" class="Button">Compile</a></li>
+            <li><a href="#">Run</a></li>
+            <li><a href="#">Save</a></li>
+            <li><a href="#">Compile</a></li>
           </ul>
         </div>
       </div>
@@ -35,16 +35,31 @@
 
   <div class="hero-unit container-fluid">
     <div class="row-fluid">
-      <div class="span6"><h4>dust template</h4></div>
-      <div class="span6"><h4>json data</h4></div>
+      <div class="span6">
+        <h4>dust template</h4>
+        <div class="well">
+          Template name <input id="search" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />
+        </div>
+      </div>
+      <div class="span6"><h4>json data</h4>
+        <div class="well">
+          <form class="form-inline">
+            <input type="text" placeholder="Enter your json endpoint url here">
+            <button type="submit" class="btn">Load</button>
+          </form>
+          <div id="json-editor">{lalala: "asasa"}</div>
+        </div>
+      </div>
     </div>
     <div class="row-fluid">
       <div class="span12"><h4>html output</h4></div>
     </div>
   </div>
 
+  <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
