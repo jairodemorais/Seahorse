@@ -24,9 +24,9 @@
         <a class="brand" href="#">Seahorse</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><a href="#" class="Button">Run</a></li>
-            <li><a href="#" class="Button">Save</a></li>
-            <li><a href="#" class="Button">Compile</a></li>
+            <li><a href="#">Run</a></li>
+            <li><a href="#">Save</a></li>
+            <li><a href="#">Compile</a></li>
           </ul>
         </div>
       </div>
@@ -37,50 +37,29 @@
     <div class="row-fluid">
       <div class="span6">
         <h4>dust template</h4>
-        <div class="well">  
-          Template name <input id="search" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />  
+        <div class="well">
+          Template name <input id="search" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />
         </div>
       </div>
-      <div class="span6"><h4>json data</h4></div>
+      <div class="span6"><h4>json data</h4>
+        <div class="well">
+          <form class="form-inline">
+            <input type="text" placeholder="Enter your json endpoint url here">
+            <button type="submit" class="btn">Load</button>
+          </form>
+          <div id="json-editor">{lalala: "asasa"}</div>
+        </div>
+      </div>
     </div>
     <div class="row-fluid">
       <div class="span12"><h4>html output</h4></div>
     </div>
   </div>
 
+  <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
   <script src="js/jquery-1.7.2.min.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script type="text/javascript">
-    files =[];
-    //get templates or json files
-    var getFiles = function(url, extension, callback) {
-      $.ajax({
-        url: url,
-        type: 'GET',
-        crossDomain: true,
-        dataType: 'json',
-        success: function(data) {
-          files[extension] = data || [];
-          callback(data);
-        }
-      });
-    };
-
-    var fillDropDown = function(apps) {
-      var templates = [];
-      for (var app in apps) {
-        for (var temp in apps[app]) {
-          templates.push(apps[app][temp]);
-        };
-      };
-      $('#search').typeahead({source: templates, items:5});
-    }
-
-    jQuery(document).ready(function() {
-      var url = "http://localhost:9000/proxy?url=http%3A%2F%2Feat1-app53.corp.linkedin.com%3A8080%2Fscds%2Fdust%2FdevBuild%2Findex%3Ff%3Dtl%2Fapps%26e%3Dtl&method=GET";
-      getFiles(url, 'tl', fillDropDown);
-    });  
-  </script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
