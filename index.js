@@ -1,14 +1,10 @@
-$(document).ready(function () {
-	var editor = ace.edit("template-editor");
-  editor.setTheme("ace/theme/chrome");
-  editor.getSession().setTabSize(2);
-  editor.getSession().setUseSoftTabs(true);
+var express = require('express');
+var port = 9000;
+var app = express();
 
-  editor.getSession().setMode("ace/mode/html");
-
-  var editor = ace.edit("context-editor");
-  editor.setTheme("ace/theme/chrome");
-  editor.getSession().setTabSize(2);
-  editor.getSession().setUseSoftTabs(true);
-  editor.getSession().setMode("ace/mode/javascript");
+app.get('/', function(req, res){
+  res.send('hello world');
 });
+
+app.listen();
+console.log('express listening in port', port, '...')

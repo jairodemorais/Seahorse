@@ -1,0 +1,14 @@
+{
+  "name": "seahorse",
+  "description": "LinkedIn's dustjs playground",
+  "homepage": "http://example.com",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/jairodemorais/Seahorse.git"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.x"
+  },
+  "engines": { "node": ">= 0.7.0" }
+}
