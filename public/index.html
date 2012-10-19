@@ -35,25 +35,28 @@
   </div>
 
   <div class="hero-unit container-fluid">
-    <div class="row-fluid">
+    <div class="row-fluid first-row">
       <div class="span6">
         <h4>dust template</h4>
-        <div class="well">
-          Template name 
-          <input id="search" type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />
-          <div id="template-editor" class="editor"></div>
-        </div>
+        <form class="form-inline">
+          <input id="search" placeholder="Start typing a template..." type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" />
+        </form>
+        <div id="template-editor" class="left-editor"></div>
       </div>
+      <div class="span6"><h4>HTML</h4>Preview
+        <div id="html-editor" class="right-editor"></div>
+      </div>
+
+    </div>
+    <div class="row-fluid">
       <div class="span6"><h4>json data</h4>
         <form class="form-inline">
           <input id="json-url" type="text" placeholder="Enter your json endpoint url here">
           <button id="json-load" type="submit" class="btn">Load</button>
         </form>
-        <div id="json-editor" class="editor"></div>
+        <div id="json-editor" class="left-editor"></div>
       </div>
-    </div>
-    <div class="row-fluid">
-      <div class="span12"><h4>html output</h4></div>
+      <div class="span6"></div>
     </div>
   </div>
 

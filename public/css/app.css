@@ -1,5 +1,22 @@
- .editor {
+.left-editor {
+  background-color:white;
   position: absolute;
-  width: 500px;
-  height: 400px;
+  width: 700px;
+  height: 300px;
+}
+
+.right-editor  {
+  background-color:white;
+  position: absolute;
+  top: 145px;
+  width: 700px;
+  height: 700px;
+}
+
+div.first-row {
+  min-height:420px;
+}
+
+body {
+
 }
