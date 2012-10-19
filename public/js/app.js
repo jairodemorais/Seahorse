@@ -61,4 +61,14 @@ $(document).ready(function(){
   getFiles(url, 'tl', fillDropDown);
 
   var jsonEditor = ace.edit("json-editor");
+  jsonEditor.setValue("{json:'sample'}");
+  jsonEditor.setTheme("ace/theme/twilight");
+  jsonEditor.getSession().setMode("ace/mode/javascript");
+
+  $('#json-load').click(function(){
+    $.get('/proxy?url=' + encodeURIComponent($('#json-url').val()) + '&method=GET', function(json){
+      jsonEditor.setValue(json);
+    });
+  })
+
 });

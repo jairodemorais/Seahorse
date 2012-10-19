@@ -10,6 +10,7 @@
   <meta name="author" content="">
 
   <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -44,13 +45,11 @@
         </div>
       </div>
       <div class="span6"><h4>json data</h4>
-        <div class="well">
-          <form class="form-inline">
-            <input type="text" placeholder="Enter your json endpoint url here">
-            <button type="submit" class="btn">Load</button>
-          </form>
-          <div id="json-editor">{lalala: "asasa"}</div>
-        </div>
+        <form class="form-inline">
+          <input id="json-url" type="text" placeholder="Enter your json endpoint url here">
+          <button id="json-load" type="submit" class="btn">Load</button>
+        </form>
+        <div id="json-editor"></div>
       </div>
     </div>
     <div class="row-fluid">
