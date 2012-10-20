@@ -41,15 +41,16 @@ $(document).ready(function(){
   });
 
   $('#json-compile').click(function() {
-    var tlInput = templateEditor.getValue().replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, '');
-    if (!tlInput) {
+    var template = templateEditor.getValue().replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, '');
+    var context = jsonEditor.getValue().replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, '');
+    if (!template) {
       event.preventDefault();
       $("#ajax_error").html("<h2>ERROR: Please select a template</h2>");
     } else {
       var url = "http://eat1-app53.corp.linkedin.com:8080/scds/dust/compile";
-      var qs = "?name=SeaHorse&context=" + jsonEditor.getValue() + "&template=" + tlInput;
-      $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=GET"), function(out) {
-        $('#source_output').val(out)
+      var qs = "?name=SeaHorse&template=" + template + "&json=" + context;
+      $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=POST"), function(out) {
+        htmlEditor.setValue(out);
       });
     }
   });

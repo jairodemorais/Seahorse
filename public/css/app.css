@@ -1,8 +1,9 @@
 .left-editor {
   background-color:white;
   position: absolute;
-  width: 700px;
+  width: 750px;
   height: 300px;
+  border: 1px solid #CCC;
 }
 
 .right-editor  {
@@ -14,9 +15,34 @@
 }
 
 div.first-row {
-  min-height:420px;
+  min-height:340px;
 }
 
-body {
+input#json-url {
+  width: 620px;
+}
 
+.span6 {
+  background-color: #EEE;
+  overflow: hidden;
+  border:1px solid #ccc;
+}
+
+.label {
+  font-size: 13px;
+  line-height: 28px;
+  width: 80px;
+  margin-left: 36px;
+  background-color: transparent;
+  height: 30px;
+}
+
+.label .text {
+  color: #AAA;
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+input {
+  height: 20px;
 }
