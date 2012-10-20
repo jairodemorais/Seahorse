@@ -48,7 +48,7 @@ $(document).ready(function(){
       $("#ajax_error").html("<h2>ERROR: Please select a template</h2>");
     } else {
       var url = "http://eat1-app53.corp.linkedin.com:8080/scds/dust/compile";
-      var qs = "?name=SeaHorse&template=" + template + "&json=" + context;
+      var qs = "?name=SeaHorse&template=" + encodeURIComponent(template) + "&json=" + encodeURIComponent(context);
       $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=POST"), function(out) {
         htmlEditor.setValue(out);
       });

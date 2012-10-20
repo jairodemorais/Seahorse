@@ -23,15 +23,16 @@ app.get('/proxy', function(req, res) {
 });
 
 function proxyRequest(req, res) {
-  console.log(req.query['url']);
   var proxyTo = url.parse(req.query['url'], true);
   proxyTo.method = req.query['method'];
   if (proxyTo.method == 'POST') {
-    var qs = Object.keys(proxyTo.query).map(function(k){  var la = k + "=" + proxyTo.query[k];  console.log(la); return la;}).join("&")
-    
+    var qs = Object.keys(proxyTo.query).map(function(k){ return k + "=" + proxyTo.query[k];}).join("&")
     delete(proxyTo.query);
+    delete(proxyTo.search);
+    proxyTo.path = proxyTo.path.substring(0, proxyTo.path.indexOf("?"));
+    proxyTo.href = proxyTo.protocol + "//" + proxyTo.host + ":" + proxyTo.port + proxyTo.path;
   }
-  console.log(proxyTo);
+
   var request = http.request(proxyTo, function(_res) {
     _res.pipe(res);
   });
