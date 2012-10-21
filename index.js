@@ -26,7 +26,7 @@ function proxyRequest(req, res) {
   var proxyTo = url.parse(req.query['url'], true);
   proxyTo.method = req.query['method'];
   if (proxyTo.method == 'POST') {
-    var qs = Object.keys(proxyTo.query).map(function(k){ return k + "=" + proxyTo.query[k];}).join("&")
+    var qs = Object.keys(proxyTo.query).map(function(k){ return k + "=" + encodeURIComponent(proxyTo.query[k]);}).join("&")
     delete(proxyTo.query);
     delete(proxyTo.search);
     proxyTo.path = proxyTo.path.substring(0, proxyTo.path.indexOf("?"));
