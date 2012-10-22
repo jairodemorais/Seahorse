@@ -1,12 +1,3 @@
-.left-editor {
-  background-color:white;
-  position: absolute;
-  width: 750px;
-  height: 325px;
-  margin-top: 5px;
-  border: 1px solid gray;
-}
-
 #html-editor  {
   background-color:white;
   position: absolute;
@@ -32,7 +23,7 @@ input#json-url {
 }
 
 #header {
-  background: #E9E9E9 url('../img/headerback.gif'); 
+  background: #E9E9E9 url('../img/headerback.gif');
 }
 
 #header #inner-nav {
@@ -49,7 +40,7 @@ input#json-url {
 #header .pipe {
   background: #E9E9E9 url('../img/pipe.gif');
   width: 2px;
-  height: 60px; 
+  height: 60px;
   float: left;
   margin-left: 15px;
 }
@@ -82,7 +73,7 @@ input#json-url {
 }
 
 .header-section {
-  background: #E9E9E9 url('../img/sectionback.gif'); 
+  background: #E9E9E9 url('../img/sectionback.gif');
   height: 44px;
   color: white;
   line-height: 45px;
@@ -109,9 +100,9 @@ input#json-url {
   font-style: italic;
 }
 
-.second-row .header-section2, 
+.second-row .header-section2,
 .first-row .header-section2 {
-  background: #E9E9E9 url('../img/sectionback2.gif'); 
+  background: #E9E9E9 url('../img/sectionback2.gif');
   clear: both;
   margin-left: 0px;
   height: 38px;

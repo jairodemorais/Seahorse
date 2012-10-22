@@ -1,9 +1,7 @@
 $(document).ready(function(){
-  var templateEditor = ace.edit("template-editor");
-  templateEditor.setTheme("ace/theme/chrome");
-  templateEditor.getSession().setTabSize(2);
-  templateEditor.getSession().setUseSoftTabs(true);
-  templateEditor.getSession().setMode("ace/mode/html");
+  var templateEditor = CodeMirror.fromTextArea(document.getElementById("template-editor"), {mode: "htmlmixed"});
+  var jsonEditor = CodeMirror.fromTextArea(document.getElementById("json-editor"), {mode: "javascript"});
+  var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html-editor"), {mode: "htmlmixed"});
 
   var url = "/proxy?url=http%3A%2F%2Feat1-app53.corp.linkedin.com%3A8080%2Fscds%2Fdust%2FdevBuild%2Findex%3Ff%3Dtl%2Fapps%26e%3Dtl&method=GET";
   $.get(url, function(apps) {
@@ -24,20 +22,6 @@ $(document).ready(function(){
     }});
   });
 
-  var jsonEditor = ace.edit("json-editor");
-  jsonEditor.setValue("{json:'sample'}");
-  jsonEditor.setTheme("ace/theme/chrome");
-  templateEditor.getSession().setTabSize(2);
-  templateEditor.getSession().setUseSoftTabs(true);
-  jsonEditor.getSession().setMode("ace/mode/javascript");
-
-  var htmlEditor = ace.edit("html-editor");
-  jsonEditor.setValue("");
-  jsonEditor.setTheme("ace/theme/chrome");
-  templateEditor.getSession().setTabSize(2);
-  templateEditor.getSession().setUseSoftTabs(true);
-  jsonEditor.getSession().setMode("ace/mode/html");
-
   $('#json-load').click(function(){
     $.get('/proxy?url=' + encodeURIComponent($('#json-url').val()) + '&method=GET', function(json){
       jsonEditor.setValue(json);
@@ -55,7 +39,7 @@ $(document).ready(function(){
       var qs = "?name=SeaHorse&template=" + encodeURIComponent(template) + "&json=" + encodeURIComponent(context);
       $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=POST"), function(out) {
         htmlEditor.setValue(out);
-      });
+      }, 'text');
     }
   });
 });
