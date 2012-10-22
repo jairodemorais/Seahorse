@@ -33,5 +33,9 @@ function proxyRequest(req, res) {
   request.end();
 }
 
+process.on('uncaughtException', function (err) {
+  console.error('Caught exception:', err);
+});
+
 app.listen(port);
 console.log('express listening in port', port, '...')
