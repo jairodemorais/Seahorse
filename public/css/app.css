@@ -2,16 +2,19 @@
   background-color:white;
   position: absolute;
   width: 750px;
-  height: 300px;
-  border: 1px solid #CCC;
+  height: 325px;
+  margin-top: 5px;
+  border: 1px solid gray;
 }
 
-.right-editor  {
+#html-editor  {
   background-color:white;
   position: absolute;
-  top: 145px;
-  width: 700px;
-  height: 700px;
+  top: 175px;
+  margin: 0px;
+  width: 750px;
+  height: 717px;
+  border: 1px solid gray;
 }
 
 div.first-row {
@@ -28,21 +31,91 @@ input#json-url {
   border:1px solid #ccc;
 }
 
-.label {
-  font-size: 13px;
-  line-height: 28px;
-  width: 80px;
-  margin-left: 36px;
-  background-color: transparent;
-  height: 30px;
+#header {
+  background: #E9E9E9 url('../img/headerback.gif'); 
 }
 
-.label .text {
-  color: #AAA;
-  margin-right: 20px;
+#header #inner-nav {
+  height: 60px;
+  line-height: 35px;
+  margin-left: 40px;
+}
+
+#header #inner-nav .brand {
+  color: white;
+  font-size: 25px;
+}
+
+#header .pipe {
+  background: #E9E9E9 url('../img/pipe.gif');
+  width: 2px;
+  height: 60px; 
+  float: left;
+  margin-left: 15px;
+}
+
+#header .button {
+  background: url("../img/button.gif");
+  border: none;
+  width: 62px;
+  height: 25px;
+  color: white;
   font-weight: normal;
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 25px;
 }
 
-input {
-  height: 20px;
+.black-button {
+  background: url("../img/black-button.gif");
+  border: none;
+  width: 62px;
+  height: 25px;
+  color: white;
+  font-weight: normal;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.hero-unit {
+  margin-top: 20px;
+}
+
+.header-section {
+  background: #E9E9E9 url('../img/sectionback.gif'); 
+  height: 44px;
+  color: white;
+  line-height: 45px;
+}
+
+.header-section span {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.header-section2 .input, .header-section .input {
+  height: 15px;
+  border: 1.5px solid black;
+  font-size: 12px;
+}
+
+.second-row {
+  margin-top: 50px;
+}
+
+.header-section2 span {
+  margin-left: 20px;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.second-row .header-section2, 
+.first-row .header-section2 {
+  background: #E9E9E9 url('../img/sectionback2.gif'); 
+  clear: both;
+  margin-left: 0px;
+  height: 38px;
+  color: white;
+  line-height: 45px;
+  border: none;
 }

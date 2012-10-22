@@ -27,11 +27,15 @@ $(document).ready(function(){
   var jsonEditor = ace.edit("json-editor");
   jsonEditor.setValue("{json:'sample'}");
   jsonEditor.setTheme("ace/theme/chrome");
+  templateEditor.getSession().setTabSize(2);
+  templateEditor.getSession().setUseSoftTabs(true);
   jsonEditor.getSession().setMode("ace/mode/javascript");
 
   var htmlEditor = ace.edit("html-editor");
   jsonEditor.setValue("");
   jsonEditor.setTheme("ace/theme/chrome");
+  templateEditor.getSession().setTabSize(2);
+  templateEditor.getSession().setUseSoftTabs(true);
   jsonEditor.getSession().setMode("ace/mode/html");
 
   $('#json-load').click(function(){
