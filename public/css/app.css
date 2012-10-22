@@ -7,13 +7,21 @@
   height: 717px;
   border: 1px solid gray;
 }
-
+#column1 .CodeMirror-scroll {
+  height: 298px;
+  margin-top: 10px;
+}
+#column2 .CodeMirror-scroll {
+  min-height: 717px;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
 div.first-row {
   min-height:340px;
 }
 
 input#json-url {
-  width: 620px;
+  width: 80%;
 }
 
 .span6 {
