@@ -12,6 +12,7 @@ $(document).ready(function(){
         templates.push(apps[app][temp]);
       };
     };
+    $('#search').removeAttr("disabled");
     $('#search').typeahead({ source: templates, updater: function (item) {
       var scdsUrl = "/proxy?url=" + encodeURIComponent("http://eat1-app53.corp.linkedin.com:8080/scds/dust/devBuild/tl?f=tl/apps" + item.replace(/(\.[^.]+$)/, ""));
       var url = scdsUrl + "&method=GET" ;
