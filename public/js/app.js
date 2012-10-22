@@ -16,6 +16,7 @@ $(document).ready(function(){
       var scdsUrl = "/proxy?url=" + encodeURIComponent("http://eat1-app53.corp.linkedin.com:8080/scds/dust/devBuild/tl?f=tl/apps" + item.replace(/(\.[^.]+$)/, ""));
       var url = scdsUrl + "&method=GET" ;
       $.get(url, function(data) {
+        $("#template-error").hide();
         templateEditor.setValue(data);
       });
       return item;
@@ -34,7 +35,7 @@ $(document).ready(function(){
     var context = jsonEditor.getValue().replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g, '');
     if (!template) {
       event.preventDefault();
-      $("#template-error").html("<span>ERROR: Please select a template</span>");
+      $("#template-error").html("<span>ERROR: Please select a dust template or edit your own.</span>");
       $("#template-error").show();
     } else {
       var url = "http://eat1-app53.corp.linkedin.com:8080/scds/dust/compile";
