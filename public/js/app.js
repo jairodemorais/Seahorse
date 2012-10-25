@@ -43,6 +43,9 @@ $(document).ready(function(){
       var qs = "?name=SeaHorse&template=" + encodeURIComponent(template) + "&json=" + encodeURIComponent(context);
       $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=POST"), function(out) {
         htmlEditor.setValue(out);
+        CodeMirror.commands["selectAll"](htmlEditor);
+        htmlEditor.autoFormatRange(htmlEditor.getCursor(true), htmlEditor.getCursor(false));
+        CodeMirror.commands["goLineEnd"](htmlEditor);
       }, 'text');
     }
   });
