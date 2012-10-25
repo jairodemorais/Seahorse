@@ -3,7 +3,7 @@ $(document).ready(function(){
   var jsonEditor = CodeMirror.fromTextArea(document.getElementById("json-editor"), {mode: "javascript"});
   var htmlEditor = CodeMirror.fromTextArea(document.getElementById("html-editor"), {mode: "htmlmixed"});
 
-  var url = "/proxy?url=http%3A%2F%2Feat1-app53.corp.linkedin.com%3A8080%2Fscds%2Fdust%2FdevBuild%2Findex%3Ff%3Dtl%2Fapps%26e%3Dtl&method=GET";
+  var url = "/proxy?url=http%3A%2F%2Fabologna-ld.linkedin.biz%3A8080%2Fscds%2Fdust%2FdevBuild%2Findex%3Ff%3Dtl%2Fapps%26e%3Dtl&method=GET";
   $.get(url, function(apps) {
     var templates = [];
     apps = JSON.parse(apps);
@@ -14,7 +14,7 @@ $(document).ready(function(){
     };
     $('#search').removeAttr("disabled");
     $('#search').typeahead({ source: templates, updater: function (item) {
-      var scdsUrl = "/proxy?url=" + encodeURIComponent("http://eat1-app53.corp.linkedin.com:8080/scds/dust/devBuild/tl?f=tl/apps" + item.replace(/(\.[^.]+$)/, ""));
+      var scdsUrl = "/proxy?url=" + encodeURIComponent("http://abologna-ld.linkedin.biz:8080/scds/dust/devBuild/tl?f=tl/apps" + item.replace(/(\.[^.]+$)/, ""));
       var url = scdsUrl + "&method=GET" ;
       $.get(url, function(data) {
         $("#template-error").hide();
@@ -39,7 +39,7 @@ $(document).ready(function(){
       $("#template-error").html("<span>ERROR: Please select a dust template or edit your own.</span>");
       $("#template-error").show();
     } else {
-      var url = "http://eat1-app53.corp.linkedin.com:8080/scds/dust/compile";
+      var url = "http://abologna-ld.linkedin.biz:8080/scds/dust/compile";
       var qs = "?name=SeaHorse&template=" + encodeURIComponent(template) + "&json=" + encodeURIComponent(context);
       $.get($.trim("/proxy?url=" + encodeURIComponent(url + qs) + "&method=POST"), function(out) {
         htmlEditor.setValue(out);
